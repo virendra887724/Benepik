@@ -1,0 +1,32 @@
+<div class="mat-elevation-z8">
+    <h1>Add New Employee</h1>
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <mat-label>Name</mat-label>
+            <input *ngIf="!statusValue" matInput placeholder="Ex. iPhone" value="" [(ngModel)]="employee_name" name="employee_name" required>
+            <input *ngIf="statusValue" matInput placeholder="Ex. iPhone" value="" [(ngModel)]="employee_name" name="employee_name" required>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Code</mat-label>
+            <textarea *ngIf="!statusValue" matInput placeholder="Ex. It makes me feel..." value="" [(ngModel)]="empcode" name="empcode" required></textarea>
+            <textarea *ngIf="statusValue" matInput placeholder="Ex. It makes me feel..." value="" [(ngModel)]="empcode" name="empcode" required></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Device</mat-label>
+            <input type="number" *ngIf="!statusValue" matInput placeholder="Ex. 10000" value="" [(ngModel)]="device" name="device" required>
+            <input type="number" *ngIf="statusValue" matInput placeholder="Ex. 10000" value="" [(ngModel)]="device" name="device" required>
+
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Client Id</mat-label>
+            <input type="number" *ngIf="!statusValue" matInput placeholder="Ex. 10" value="" [(ngModel)]="client_id" name="client_id" required>
+            <input type="number" *ngIf="statusValue" matInput placeholder="Ex. 10" value="" [(ngModel)]="client_id" name="client_id" required>
+        </mat-form-field>
+
+        <button mat-raised-button class="addEmployee" (click)="addEmployee(employee_name)">Add Product</button>
+    </form>
+</div>
